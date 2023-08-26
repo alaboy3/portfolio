@@ -1,0 +1,288 @@
+
+/* Blog */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 125px; /* Adjusted height to be 25% bigger */
+    margin-left: 10%;
+}
+
+#search-input {
+    padding: 12px;
+    border: 1px solid #9bb2a2;
+    background-color: #78867C;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #FAFAFA;
+}
+
+#search-input::placeholder {
+    color: #FAFAFA; /* Placeholder text color */
+}
+
+/* Filter Navigation */
+.nav-container {
+    margin-left: 4.5%;
+    margin-right: 7%;
+    text-align: center;
+    padding: 15px;
+}
+
+/* h1 {
+    margin-top: 0;
+    text-align: left;
+    margin-left: 1.5%;
+} */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center items */
+    align-items: center;
+    padding: 0; /* Remove padding to decrease space between items */
+    margin: 0; /* Remove margin for the ul element */
+}
+
+nav ul li {
+    flex: 0 0 auto; /* Prevent items from growing and shrinking */
+    margin: 5px; /* Adjust margin for space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #394240;
+    display: inline-block;
+    padding: 8px 16px; /* Add padding for vertical alignment */
+    text-align: center;
+    border: 2px solid transparent; /* Start with no border color */
+    background-color: #d3e3cc;
+    border-radius: 50px; /* Rounder borders */
+    transition: background-color 0.3s, transform 0.3s;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    background-color: #9bb2a2;
+    color: #FAFAFA;
+    transform: scale(1.05);
+   
+}
+
+
+
+/* Featured Blog*/
+.featured-blog {
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    background: url('/assets/EndOfTheWorld.jpeg') no-repeat left center;
+    background-size: cover;
+    border-radius: 20px; /* Adjust the border radius to your preference */
+    display: flex;
+    max-width: 1260px;
+    height: 400px; /* Adjust the desired height */
+    margin: 0 auto;
+    overflow: hidden; /* Hide the overflowing content during the transition */
+    transition: max-width 0.3s ease, height 0.3s ease; /* Add transitions for max-width and height */
+}
+
+.featured-blog:hover {
+    max-width: 1400px; /* Adjust the expanded width on hover */
+    height: 450px; /* Adjust the expanded height on hover */
+}
+
+.featured-blog:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px; /* Use the same border radius as in the main container */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay for border effect */
+    transition: opacity 0.3s ease; /* Add transition for overlay opacity */
+    opacity: 0; /* Initially hidden */
+}
+
+.featured-blog:hover:before {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+.featured-blog .gradient-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+    border-radius: 0 2% 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.featured-blog h2 {
+    position: absolute;
+    top: 5;
+    left: 3%;
+    padding: 10px;
+    color: #d2c3ac;
+    margin: 0;
+}
+
+
+.featured-blog h1 {
+    position: absolute;
+    bottom: 20%;
+    right: 3%;
+    text-align: right;
+    color: #78867C;
+    margin: 0;
+    font-size: 30px; /* Adjust the font size as needed */
+}
+
+.featured-blog p {
+    position: absolute;
+    bottom: 14%;
+    right: 3%;
+    text-align: right;
+    color: white;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 0;
+}
+
+.featured-blog a,
+.featured-blog iconify-icon {
+    position: absolute;
+    bottom: 7%;
+    right: 8%;
+}
+
+.featured-blog a {
+    display: inline-block;
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline from hyperlink */
+}
+
+.featured-blog iconify-icon {
+    color: #e1d9d1;
+    font-size: 50px; /* Adjust the font size as needed */
+    bottom: -70%; /* Adjust the bottom value to align the icon correctly */
+    right: -60%; /* Adjust the right value to align the icon correctly */
+    animation: hoverAnimation 1s infinite alternate; /* Apply the animation */
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+/* Blog Container */
+
+.blog-container {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: left;
+    margin-left: 5%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.blog-container article {
+    flex: 0 0 calc(30% - 1px);
+    margin: 10px;
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    height: 350px;
+    transition: width 0.3s ease, height 0.3s ease; /* Add transition for width and height */
+}
+
+/* Add a hover effect */
+.blog-container article:hover {
+    width: calc(35% - 20px); /* Adjust width on hover */
+    height: 380px; /* Adjust height on hover */
+}
+
+
+.blog-container .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -2; /* Adjust the z-index to be lower than the overlay */
+}
+
+.blog-container .gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.836));
+    z-index: -1;
+    opacity: 0.7;
+    pointer-events: none; /* Set pointer-events to none to allow clicks to pass through */
+}
+
+
+.blog-container .article-content {
+    padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.blog-container h2 {
+    text-align: right;
+    color: #FAFAFA;
+    font-size: 20px;
+}
+
+.blog-container a {
+    color: #e1d9d1;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    z-index: 3; /* Ensure the link is above the overlay */
+}
+
+
+.blog-container iconify-icon {
+    color: #e1d9d1;
+    font-size: 50px;
+    margin-bottom: 20%;
+    animation: hoverAnimation 1s infinite alternate;
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+

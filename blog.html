@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="styling/blog.css">
+    <link rel="stylesheet" href="styling/index.css">
+</head>
+<style>
+    @font-face {
+        font-family: 'Container';
+        src: url('fonts/Matter-Regular.otf') format('truetype');
+    }
+</style>
+<body class="dark-mode">
+    <div id="header-placeholder"></div>
+    <div class="fadeInElements">
+        <div class="container" style="display: flex; align-items: center;">
+            <div style="flex: 1; text-align: center; margin-left: 7%;">
+                <div style="text-align: left;">
+                    <h1 style="display: inline-block; font-size: 6em; margin: 0;">Grow with me.</h1>
+                    <h2 style="font-size: 2em; margin: 0;">Sharing crazy experiments and experiences learned.</h2>
+                </div>
+                <header>
+                    <div class="search-bar" style="position: relative;">
+                        <input type="text" id="search-input" placeholder="Search posts" style="padding-left: 45px;">
+                        <iconify-icon icon="healthicons:magnifying-glass-outline" style="color: #fafafa; font-size: 30px; position: absolute; left: 10px; top: 43%; transform: translateY(-50%);"></iconify-icon>
+                        <div id="search-count" style="position: absolute; right: 10px; top: 45%; transform: translateY(-50%); color: #fafafa;"></div>
+                    </div>
+                </header>
+            </div>
+            <img src="assets/Blog.png" alt="Blog Image" style="max-width: 70%; height: auto; margin-right: -10%;">
+        </div>
+        
+        <div class="nav-container">
+            <h1>Search articles by topics</h1>
+            <nav>
+                <ul>
+                    <li><a id="filter-all">All</a></li>
+                    <li><a id="filter-virtual-gaming-spatial">Unity</a></li>
+                    <li><a id="filter-unreal-engine-virtual-gaming-spatial">Unreal Engine</a></li>
+                    <li><a id="filter-remote-production">Remote Production</a></li>
+                    <li><a id="filter-interactive-media">Interactive Media</a></li>
+                    <li><a id="filter-filmmaking">Filmmaking</a></li>
+                    <li><a id="filter-game-gaming">Gaming</a></li>
+                    <li><a id="filter-real-time-streaming-stream-multiview-simulcast">Streaming</a></li>
+                    <li><a id="filter-cameras-ndi-multiview-gopro">Cameras</a></li>
+                    <li><a id="filter-accessibility-community">Accessibility</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="featured-blog" id="featured-article">
+            <article>
+                <h2>Featured Article</h2>
+                <h1>Interactive Live Streaming Through Virtual Cameras on Unity</h1>
+                <p>Streaming Multi-Cam from inside Unity</p>
+                <a href="https://dev.to/dolbyio/interactive-live-streaming-through-virtual-cameras-on-unity-20ka">Read more
+                    <iconify-icon icon="tabler:arrow-right-circle" style="color: #e1d9d1; margin-left: 5px;"></iconify-icon>
+                </a>
+            </article>
+        </section>
+        
+        <section class="blog-container">
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/REMI.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Masterful Editing and Remote Production: Unleash Adobe Premiere Pro Streams via NDI and WebRTC</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/masterful-editing-and-remote-production-unleash-adobe-premiere-pro-streams-via-ndi-and-webrtc/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+        
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Accessibility.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Boost Accessibility and Engagement: Real-time Closed Captioning with Web Captioner</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/boost-accessibility-and-engagement-real-time-closed-captioning-with-web-captioner/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Videon\ 1.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Unlocking the Power of Multiview and Simulcast: Videon’s Edgecaster Enhanced with Dolby.io</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/unlocking-the-power-of-multiview-and-simulcast-videons-edgecaster-enhanced-with-dolby-io/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Fans.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Powering Success: The Importance of Fan Engagement in Building a Thriving Community</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/powering-success-the-importance-of-fan-engagement-in-building-a-thriving-community/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Videon\ 2.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Unleash Superior Streaming: Harnessing Dolby.io Streaming API and Videon EdgeCaster Encoder for Multi-Bitrate Simulcasting</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/unleash-superior-streaming-harnessing-dolby-io-streaming-api-and-videon-edgecaster-encoder-for-multi-bitrate-simulcasting/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/VR.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Beyond Loudness: Spatial Chat and The Future of Gaming Communication</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/beyond-loudness-spatial-chat-and-the-future-of-gaming-communication/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Spatial.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Spatial Chatter: Engaging Local Multiplayer Communication for Unforgettable Virtual Experiences</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/spatial-chatter-engaging-local-multiplayer-communication-for-unforgettable-virtual-experiences/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Stream\ UNity.webp');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Stream The World: A Guide to Start Streaming Your Game</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/stream-the-world-a-guide-to-start-streaming-your-game/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/Geo.jpg');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>Geo-Blocking: What Is It and How To Implement It Into Your Stream</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/geo-blocking-what-is-it-and-how-to-implement-it-into-your-stream/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-article">
+                <div class="background-image" style="background-image: url('assets/GoPro.jpg');"></div>
+                <div class="gradient-overlay"></div>
+                <div class="article-content">
+                    <h2>GoPro Live Stream Via Dolby.io Streaming</h2>
+                    <div class="link-container">
+                        <a href="https://dolby.io/blog/gopro-live-stream-dolby-io-streaming/">
+                            Read More
+                            <iconify-icon icon="tabler:arrow-right-circle"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>>
+
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+    <script>
+        // Get all the filter links
+        const filterLinks = document.querySelectorAll('.nav-container a[id^="filter-"]');
+
+        // Get all the articles including the featured article
+        const articles = document.querySelectorAll('.blog-article, .featured-blog');
+
+        // Attach click event listeners to the filter links
+        filterLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Get the filter keywords from the link's ID
+                const keywords = link.id.replace('filter-', '').split('-');
+
+                // Toggle visibility of articles based on the keywords
+                articles.forEach(article => {
+                    const title = article.querySelector('h2').textContent.toLowerCase().trim();
+
+                    if (keywords.includes('all') || keywords.some(keyword => title.includes(keyword))) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+
+                // Remove active class from all filter links and add it to the clicked link
+                filterLinks.forEach(filterLink => filterLink.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+    </script>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchCount = document.getElementById('search-count');
+        const featuredArticle = document.querySelector('.featured-blog');
+        const featuredTitle = featuredArticle.querySelector('h1').textContent.toLowerCase();
+        let totalArticleCount = articles.length + 1; // Including the featured article
+
+        // Display the initial total count
+        searchCount.textContent = `${totalArticleCount} articles`;
+
+        // Attach input event listener to the search input
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let matchingCount = 0; // Initialize the matching count
+
+            articles.forEach(article => {
+                const title = article.querySelector('h2').textContent.toLowerCase();
+
+                // Check if the search term is present in the article's title
+                if (searchTerm && title.includes(searchTerm)) {
+                    article.style.display = 'block';
+                    matchingCount++; // Increment the matching count
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Check if the search term is present in the featured article's title
+            if (searchTerm && featuredTitle.includes(searchTerm)) {
+                featuredArticle.style.display = 'block';
+                matchingCount++; // Increment the matching count for featured article
+            } else if (!searchTerm) {
+                featuredArticle.style.display = 'block'; // Show featured article when no search term
+                matchingCount++; // Increment the matching count for total articles
+            } else {
+                featuredArticle.style.display = 'none';
+            }
+
+            // Display the matching count or total count when no search term
+            if (searchTerm) {
+                searchCount.textContent = `${matchingCount} matches`;
+            } else {
+                searchCount.textContent = `${totalArticleCount} articles`;
+            }
+        });
+    </script>    
+    <script>
+    // Get all the article links by their class name
+    const articleLinks = document.querySelectorAll('.blog-article, .featured-blog');
+
+    // Add a click event listener to each article link
+    articleLinks.forEach(article => {
+        article.addEventListener('click', function(event) {
+            // Get the link element inside the article
+            const linkElement = article.querySelector('a');
+
+            // Get the URL from the href attribute
+            const url = linkElement.getAttribute('href');
+
+            // Open the URL in a new tab/window
+            window.open(url, '_blank');
+        });
+    });
+</script>
+</body>
+</html>

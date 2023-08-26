@@ -1,0 +1,211 @@
+.scroll-container {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+.parallax-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Adjust as needed */
+    overflow: hidden;
+}
+  
+.parallax-item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Speaking video styles */
+.speaking-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30%;
+    width: 100%;
+    height: 150vh; /* Increased height to allow for zooming effect */
+    transform-origin: center center;
+    opacity: 0; /* Initial opacity for speaking video */
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;  /* Add this to prevent interaction with hidden elements */
+}
+
+/* title and the icon */
+.intro-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FAFAFA;
+    height: 100vh;
+    top: -5%;
+    overflow: hidden;
+    flex-direction: column;
+    transform-origin: center center;
+    opacity: 1; /* Initial opacity for the intro container */
+    transition: opacity 0.5s ease-out;
+    pointer-events: auto; /* Enable interaction by default */
+}
+
+/* Animation beginning */
+.intro-container.hide-intro {
+    opacity: 0; /* Hide the intro container by reducing opacity */
+    pointer-events: none; /* Disable interaction when hidden */
+    transition: opacity 0.5s ease-out, pointer-events 0s 0.5s; /* Delay pointer-events change */
+}
+
+.intro-container.hide-intro .speaking-video {
+    pointer-events: auto; /* Re-enable interaction when elements are visible */
+    opacity: 1; /* Show elements when intro is hidden */
+    transition: opacity 0.5s ease-in;
+}
+
+.speaking-video .image {
+    flex: 1;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.speaking-video img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+.speaking-video .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.speaking-video h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    color: #FAFAFA;
+}
+
+.speaking-video .video {
+    flex: 1;
+    margin-left: 5%;
+}
+
+.speaking-video video {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+/* Styling for "Read More" link */
+.read-more-container {
+    margin-top: 10px;
+}
+
+.read-more-link {
+    text-decoration: none;
+    color: #d2c3ac;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 5%;
+    position: relative;
+    z-index: 9999; /* Adjust this value as needed */
+
+}
+
+.read-more-link .iconify {
+    font-size: 50px;
+    margin-left: 5px;
+    animation: hoverAnimation 1s infinite alternate;
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+/* Styling for video speaking */
+.speaking-video img {
+    max-width: 20%; /* Adjust the max-width of images */
+    display: block;
+    max-width: 200%; /* Ensure images don't overflow their containers */
+}
+
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.index-h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+.image {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.mandelbulb-container {
+    position: absolute;
+    top: -35%;
+    left: -10%;
+    right: 0; /* Stretch to both ends horizontally */
+    transform: translateY(8%); /* No need to translate horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width */
+    height: 100%; /* You can adjust the height as needed */
+}
+
+#canvas-wrapper {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+}
+
+#mandelbulb-canvas-container {
+    width: 100%; /* Full width */
+    height: 100%; /* Adjust as needed */
+}
+.direction {
+    color: #535d56;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-icon {
+    color: #535d56;
+    font-size: 30px; /* Increase the font size for a bigger arrow */
+    margin-right: 5px;
+    rotate: 90deg;
+    animation: pulsateArrow 1.5s ease-in-out infinite; /* Add pulsating animation */
+}
+
+@keyframes pulsateArrow {
+    0%, 100% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.2); /* Increase size during pulsation */
+    }
+}

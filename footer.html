@@ -1,0 +1,79 @@
+<style>
+    @font-face {
+        font-family: 'Email';
+        src: url('fonts/Matter-Medium.otf') format('truetype');
+    }
+</style>
+<footer>
+    <hr>
+    <div class="footer-content">
+        <div class="name-bottom">
+            Angelik Laboy Torres<br>
+            <div class="title-bottom" style="margin-top: 10px;">Creative Technologist</div>
+            <div class="social-icons" style="display: flex; gap: 10px; margin-top: 10px;">
+                <a href="https://github.com/alaboy3" target="_blank"><span class="iconify" data-icon="simple-icons:github" data-inline="false"></span></a>
+                <a href="https://www.linkedin.com/in/angelik-laboy/" target="_blank"><span class="iconify" data-icon="simple-icons:linkedin" data-inline="false"></span></a>
+                <a href="https://www.youtube.com/@angeliklaboy" target="_blank"><span class="iconify" data-icon="simple-icons:youtube" data-inline="false"></span></a>
+                <a href="https://twitter.com/AngelikLaboy" target="_blank"><span class="iconify" data-icon="simple-icons:twitter" data-inline="false"></span></a>
+                <a href="https://www.instagram.com/angeliklaboy/" target="_blank"><span class="iconify" data-icon="simple-icons:instagram" data-inline="false"></span></a>
+            </div>
+            <div class="name-signature">
+                Angelik Laboy Torres
+            </div>
+            <p>All rights reserved © Angelik Laboy Torres 2023</p> 
+    </div>
+    <div class="email-container">
+        <h1>Contact Me</h1>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="submit-button">
+                <iconify-icon icon="uit:arrow-circle-right"></iconify-icon>
+            </button>
+        </form>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contactForm");
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const message = document.getElementById("message").value;
+
+                const backendURL = "send_email.php";
+
+                // Send the data to the backend using a fetch request
+                fetch(backendURL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        message: message,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Email sent successfully!");
+                        // Clear the form inputs
+                        document.getElementById("name").value = "";
+                        document.getElementById("message").value = "";
+                    } else {
+                        alert("Email sending failed. Please try again later.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+            });
+        });
+</script>
