@@ -67,18 +67,29 @@ li p {
 }
 
 .image-container img {
-    margin: 2px; /* Add spacing between images */
+    margin: 5px; /* Add spacing between images */
+    transition: transform 0.3s; /* Add a transition for smooth scaling */
 }
 
 .bigger-image {
-    width: 760px; /* Adjust the width as needed for profile1.png */
+    width: 760px;
     height: auto;
+    transition: transform 0.3s; /* Add transition for bigger image */
+}
+
+.image-container:hover .bigger-image {
+    transform: scale(0.95); /* Slightly scale down the bigger image on container hover */
 }
 
 .smaller-image {
     width: auto;
-    height: 400px; /* Set the same height as profile1.png for profiles 3 and 4 */
+    height: 400px;
 }
+
+.image-container:hover .smaller-image {
+    transform: scale(1.05); /* Expand the smaller image on hover */
+}
+
 
 .bio {
     font-weight: 300;
@@ -109,16 +120,17 @@ li p {
     text-align: left;
 }
 
-.tabler-icon {
-    font-size: 4em; /* Adjust the size as needed */
+/* Icon from the cards */
+.tabler-icon { 
+    font-size: 4em; 
 }
 
-.ag-format-container {
+.facts-container {
     width: 1142px;
     margin: 0 auto;
 }
  
-.ag-courses_box {
+.facts-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -136,7 +148,6 @@ li p {
     margin: 0 15px 30px;
     overflow: hidden;
     border-radius: 28px;
-
 }
 
 .ag-courses-item_link {
@@ -144,36 +155,8 @@ li p {
     padding: 30px 20px;
     background-color: #d3e3cc;
     overflow: hidden;
+    
     position: relative;
-}
-
-.ag-courses-item_link:hover{
-    text-decoration: none;
-    color: #291711;
-}
-
-.ag-courses-item_link:hover .ag-courses-item_bg {
-    -webkit-transform: scale(10);
-    -ms-transform: scale(10);
-    transform: scale(10);
-}
-
-.ag-courses-item_link:hover .ag-courses-item_title {
-    opacity: 0; /* Fade out the title on hover */
-}
-
-.ag-courses-item_link:hover .ag-courses-item_context {
-    display: block; /* Display the context on hover */
-    opacity: 1; /* Fade in the context on hover */
-}
-
-.ag-courses-item_link:hover ul {
-    display: block; /* Display the ul on hover */
-    opacity: 1; /* Fade in the context on hover */
-}
-.ag-courses-item_link:hover li {
-    display: block; /* Display the ul on hover */
-    opacity: 1; /* Fade in the context on hover */
 }
 
 .ag-courses-item_title {
@@ -203,28 +186,13 @@ li p {
     z-index: 2;
 
     position: absolute;
-    top: 50%; /* Center vertically */
+    top: 47%; /* Center vertically */
     right: 10%; /* Center horizontally */
     transform: translate(6%, -45%); /* Centering trick */
     width: auto; /* Allow the width to adjust based on content */
+    height: auto;
     display: none;
 }
-
-ul {
-    display: none;
-    transition: opacity 0.3s;
-    opacity: 0;
-    z-index: 2;
-    color: #535d56;
-    transform: translate(6%, -45%); /* Centering trick */
-    padding-left: 20px; /* Adjust the left padding for list items */
-    position: absolute; /* Position the ul absolutely */
-    top: 100%; /* Position it below the context */
-    left: 0;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 .ag-courses-item_bg {
     height: 128px;
     width: 128px;
@@ -242,6 +210,25 @@ ul {
     transition: all .5s ease;
 }
 
+.ag-courses-item_link:hover{
+    text-decoration: none;
+    color: #291711;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+}
+
+.ag-courses-item_link:hover .ag-courses-item_title {
+    opacity: 0; /* Fade out the title on hover */
+}
+
+.ag-courses-item_link:hover .ag-courses-item_context {
+    display: block; /* Display the context on hover */
+    opacity: 1; /* Fade in the context on hover */
+}
 
 @media only screen and (max-width: 979px) {
     .ag-courses_item {
@@ -264,7 +251,7 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
-    .ag-format-container {
+    .facts-container {
     width: 96%;
     }
 
@@ -322,6 +309,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5%;
+
     position: relative; /* Needed for tooltips */
 }
 

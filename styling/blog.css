@@ -21,6 +21,7 @@
     color: #FAFAFA; /* Placeholder text color */
 }
 
+
 /* Filter Navigation */
 .nav-container {
     margin-left: 4.5%;
@@ -28,12 +29,6 @@
     text-align: center;
     padding: 15px;
 }
-
-/* h1 {
-    margin-top: 0;
-    text-align: left;
-    margin-left: 1.5%;
-} */
 
 nav ul {
     list-style: none;

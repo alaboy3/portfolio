@@ -10,26 +10,51 @@
     height: 100vh; /* Adjust as needed */
     overflow: hidden;
 }
-  
+
+.arrow-icon {
+    color: #535d56;
+    font-size: 90px; /* Increase the font size for a bigger arrow */
+    position: absolute;
+    display: flex;
+    z-index: 999;
+    align-items: center;
+    cursor: pointer; /* Add a pointer cursor to indicate clickability */
+    justify-content: center; /* Center the content horizontally and vertically */
+}
+
+.arrow-right {
+    position: absolute; /* Make sure to set position */
+    right: 3%;
+    top: 40%;
+    rotate: 90deg; /* Use 'transform' property for rotation */
+}
+
+.arrow-left {
+    position: absolute; /* Make sure to set position */
+    left: 3%;
+    top: 40%;
+    rotate: 270deg; /* Use 'transform' property for rotation */
+}
+
+@keyframes pulsateArrow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Increase size during pulsation */
+    }
+}
+
+.arrow-right.clicked,
+.arrow-left.clicked {
+    animation: pulsateArrow 1.5s ease-in-out infinite;
+    transform: scale(1.2); /* Increase size when clicked */
+}
+
 .parallax-item {
     width: 100%;
     height: 100vh;
     position: relative;
-}
-
-/* Speaking video styles */
-.speaking-video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -30%;
-    width: 100%;
-    height: 150vh; /* Increased height to allow for zooming effect */
-    transform-origin: center center;
-    opacity: 0; /* Initial opacity for speaking video */
-    transition: opacity 0.5s ease-out;
-    pointer-events: none;  /* Add this to prevent interaction with hidden elements */
 }
 
 /* title and the icon */
@@ -62,14 +87,32 @@
     transition: opacity 0.5s ease-in;
 }
 
+/* Speaking video styles */
+.speaking-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30%;
+    left: 7%;
+    width: 100%;
+    height: 150vh; /* Increased height to allow for zooming effect */
+    transform-origin: center center;
+    opacity: 0; /* Initial opacity for speaking video */
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;  /* Add this to prevent interaction with hidden elements */
+}
+
 .speaking-video .image {
     flex: 1;
     margin-left: 5%;
+    margin-right: 10%;
     margin-top: 2%;
+    border-radius: 2%;
 }
 
 .speaking-video img {
-    width: 80%;
+    width: 75%;
     height: 100%;
     object-fit: cover;
     border-radius: 2%;
@@ -81,7 +124,7 @@
 }
 
 .speaking-video h3 {
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 10px;
     margin-left: 5%;
     color: #FAFAFA;
@@ -90,10 +133,11 @@
 .speaking-video .video {
     flex: 1;
     margin-left: 5%;
+    margin-right: 10%;
 }
 
 .speaking-video video {
-    width: 90%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
     border-radius: 2%;
@@ -102,6 +146,7 @@
 /* Styling for "Read More" link */
 .read-more-container {
     margin-top: 10px;
+    z-index: 99;
 }
 
 .read-more-link {
@@ -112,8 +157,6 @@
     font-size: 20px;
     margin-left: 5%;
     position: relative;
-    z-index: 9999; /* Adjust this value as needed */
-
 }
 
 .read-more-link .iconify {
@@ -138,6 +181,54 @@
     max-width: 200%; /* Ensure images don't overflow their containers */
 }
 
+/* Speaking video styles */
+.speaking-video-reserve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30%;
+    right: 7%;
+    width: 100%;
+    height: 150vh; /* Increased height to allow for zooming effect */
+    transform-origin: center center;
+    opacity: 0; /* Initial opacity for speaking video */
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;  /* Add this to prevent interaction with hidden elements */
+}
+
+.speaking-video-reserve .image {
+    flex: 1;
+    margin-left: 12%;
+    margin-right: 5%;
+    margin-top: 2%;
+    border-radius: 2%;
+}
+
+.speaking-video-reserve img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+.speaking-video-reserve .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.speaking-video-reserve h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 5%;
+    color: #FAFAFA;
+}
+
+.speaking-video-reserve .read-more-container {
+    margin-top: 10px;
+    margin-left: -5%;
+    z-index: 66;
+}
 
 .text-container {
     position: absolute;
@@ -170,8 +261,9 @@
     align-items: center;
     justify-content: center;
     width: 100%; /* Full width */
-    height: 100%; /* You can adjust the height as needed */
+    height: 100vh; /* You can adjust the height as needed */
 }
+
 
 #canvas-wrapper {
     width: 100%; /* Full width */
@@ -183,29 +275,60 @@
     width: 100%; /* Full width */
     height: 100%; /* Adjust as needed */
 }
-.direction {
-    color: #535d56;
-    padding: 10px;
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    display: flex;
-    align-items: center;
-}
 
-.arrow-icon {
-    color: #535d56;
-    font-size: 30px; /* Increase the font size for a bigger arrow */
-    margin-right: 5px;
-    rotate: 90deg;
-    animation: pulsateArrow 1.5s ease-in-out infinite; /* Add pulsating animation */
-}
-
-@keyframes pulsateArrow {
-    0%, 100% {
-    transform: scale(1);
-    }
-    50% {
-    transform: scale(1.2); /* Increase size during pulsation */
+/* Adjust the font size of h3 in speaking-video for smaller screens */
+@media (max-width: 768px) {
+    .speaking-video h3 {
+        font-size: 24px;
     }
 }
+
+/* Adjust the font size of .read-more-link for smaller screens */
+@media (max-width: 768px) {
+    .read-more-link {
+        font-size: 18px;
+    }
+}
+
+/* Adjust the font size of .index-h1 for smaller screens */
+@media (max-width: 768px) {
+    .index-h1 {
+        font-size: 60px;
+    }
+}
+
+/* Adjust the position of .direction for smaller screens */
+@media (max-width: 768px) {
+    .direction {
+        top: 5%;
+        right: 2%;
+    }
+}
+
+/* Adjust the position of .mandelbulb-container for smaller screens */
+@media (max-width: 768px) {
+    .mandelbulb-container {
+        top: -20%;
+    }
+}
+
+/* Adjust the font size of .direction for smaller screens */
+@media (max-width: 768px) {
+    .direction {
+        top: 5%;
+        right: 2%;
+    }
+}
+
+/* Adjust the font size and margin of .arrow-icon for smaller screens */
+@media (max-width: 768px) {
+    .arrow-icon {
+        font-size: 24px; /* Decrease the font size for a smaller arrow */
+        margin-right: 2px; /* Decrease the margin for better alignment */
+    }
+}
+
+
+
+
+

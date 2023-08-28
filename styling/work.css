@@ -5,10 +5,11 @@
     text-align: left;
     margin: auto;
     max-width: 1500px;
-}
-
-.last-experience {
-    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    margin-bottom: 7%;
+    align-items: flex-start;
 }
 
 .experience-year {
@@ -16,43 +17,46 @@
     margin-bottom: 15px;
 }
 
-
 .experience-content {
     display: flex;
     align-items: center;
+    position: relative;
     gap: 20px;
+    flex: 1;
+    left: auto;
+    transform: none;
 }
+
 .position-title {
-    font-size: 35px;
-    margin: 0;
-    position: absolute; 
-    right: 5%;
-    top: 15%; /* Center the position title vertically */
-    transform: translateY(-50%);
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align content to the right */
+    position: absolute;
+    top: -10%;
+    right: 5px; /* Adjust as needed */
+    transform: translateY(-50%); /* Adjust as needed for vertical centering */
 }
 
 .experience-image {
-    max-width: 52%;
-    height: auto;
+    width: 45%;
     border-radius: 5px;
-
+    margin-left: 3.5%;
+    z-index: -1;
 }
-
-
 
 .experience-description {
     margin-top: 10px;
+    position: relative;
+    left: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex: 1;
     padding: 25px;
     background-color: #9bb2a2;
     border-radius: 2px;
+    z-index: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-10%);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
@@ -67,11 +71,12 @@
 }
 
 .tags {
-    position: absolute; 
-    right: 7%;
-    bottom: 4%;
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 24%;
+    bottom: -13%;
+    transform: translateX(50%);
 }
 
 .tag {
@@ -83,7 +88,7 @@
     border-radius: 20px;
     margin-right: 10px;
     margin-bottom: 10px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transfexorm 0.3s;
 }
 
 .tag:hover {
@@ -91,3 +96,4 @@
     color: #FAFAFA;
     transform: scale(1.05);
 }
+
