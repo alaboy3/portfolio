@@ -14,13 +14,37 @@ fetch('Footer.html')
         footerPlaceholder.innerHTML = data;
     });
 
-// Dark mode toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
+// Function to set up navbar highlighting
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        // Remove 'active' class from all links
+        navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked link
+        link.classList.add('active');
+    });
 });
 
+// Circular button
+const cursor = document.querySelector('.circular-cursor');
+const buttons = document.querySelectorAll('button, [role="button"]');
 
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+});
 
+buttons.forEach((button) => {
+  button.addEventListener('mouseenter', () => {
+    cursor.style.backgroundColor = 'rgba(255, 100, 0, 0.5)'; // Change color when over button
+  });
+
+  button.addEventListener('mouseleave', () => {
+    cursor.style.backgroundColor = 'rgba(255, 165, 0, 0.5)'; // Reset color when leaving button
+  });
+});

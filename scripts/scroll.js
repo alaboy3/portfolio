@@ -1,92 +1,59 @@
-const container1 = document.getElementById('container1');
-const container2 = document.getElementById('container2');
-const container3 = document.getElementById('container3');
-const container4 = document.getElementById('container4'); // New container
-const container5 = document.getElementById('container5'); // New container
-const container6 = document.getElementById('container6'); // New container
+const containerIds = ['container1', 'container2', 'container3', 'container4', 'container5', 'container6'];
+let currentContainerIndex = 0;
 
-// Set the initial z-index for all containers
-const initialZIndex = 10;
-const containers = [container1, container2, container3, container4, container5, container6];
-containers.forEach((container, index) => {
-    container.style.zIndex = initialZIndex + index;
-    container.style.opacity = 0;
-});
-
-container2.style.opacity = 0; // Hide container2 initially
-container3.style.opacity = 0; // Hide container3 initially
-container4.style.opacity = 0; // Hide container4 initially
-container5.style.opacity = 0; // Hide container5 initially
-container6.style.opacity = 0; // Hide container6 initially
-
-let currentIndex = 0; // Start from container1 (index 0)
-
-function showContainer(index) {
-    containers.forEach((container, i) => {
-        if (i === index) {
+function showCurrentContainer() {
+    containerIds.forEach((id, index) => {
+        const container = document.getElementById(id);
+        if (index === currentContainerIndex) {
             container.style.opacity = 1;
-            container.style.zIndex = Math.max(...containers.map(c => parseInt(c.style.zIndex))) + 1; // Move to the top
+            container.style.zIndex = 1; // Bring the current container to the top
         } else {
             container.style.opacity = 0;
+            container.style.zIndex = 0; // Move other containers below
         }
     });
 }
 
-function updateContainer(action) {
-    if (action === 'next') {
-        currentIndex = (currentIndex + 1) % containers.length;
-    } else if (action === 'prev') {
-        currentIndex = (currentIndex - 1 + containers.length) % containers.length;
+function handleArrowKey(event) {
+    // Check if the event target is an input field or a textarea
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        return; // Allow arrow key events in input fields and textareas
     }
-    showContainer(currentIndex);
-}
 
-document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') {
-        updateContainer('next');
+        currentContainerIndex = (currentContainerIndex + 1) % containerIds.length;
     } else if (event.key === 'ArrowLeft') {
-        updateContainer('prev');
+        currentContainerIndex = (currentContainerIndex - 1 + containerIds.length) % containerIds.length;
     }
-});
+    showCurrentContainer();
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const arrowRightIcon = document.querySelector('.arrow-icon.arrow-right');
-    const arrowLeftIcon = document.querySelector('.arrow-icon.arrow-left');
-
-    arrowRightIcon.addEventListener('click', () => {
-        updateContainer('next');
-        arrowRightIcon.classList.add('clicked');
-        setTimeout(() => {
-            arrowRightIcon.classList.remove('clicked');
-        }, 1500); // Duration of the pulsating animation
-    });
-
-    arrowLeftIcon.addEventListener('click', () => {
-        updateContainer('prev');
-        arrowLeftIcon.classList.add('clicked');
-        setTimeout(() => {
-            arrowLeftIcon.classList.remove('clicked');
-        }, 1500); // Duration of the pulsating animation
-    });
-
-    // Show container1 initially and hide other containers
-    showContainer(currentIndex);
-});
-
-// Listen for horizontal scrolling
-let scrolling = false;
-document.addEventListener('wheel', (event) => {
-    if (!scrolling) {
-        scrolling = true;
-        if (event.deltaX > 0) {
-            // Scroll right
-            updateContainer('next');
-        } else if (event.deltaX < 0) {
-            // Scroll left
-            updateContainer('prev');
-        }
-        setTimeout(() => {
-            scrolling = false;
-        }, 1000); // Delay to prevent rapid scrolling
+function handleScroll(event) {
+    if (event.deltaX > 0) {
+        currentContainerIndex = (currentContainerIndex + 1) % containerIds.length;
+    } else if (event.deltaX < 0) {
+        currentContainerIndex = (currentContainerIndex - 1 + containerIds.length) % containerIds.length;
     }
-});
+    showCurrentContainer();
+}
+
+function handleClickArrow(iconClass) {
+    if (iconClass === 'arrow-right') {
+        currentContainerIndex = (currentContainerIndex + 1) % containerIds.length;
+    } else if (iconClass === 'arrow-left') {
+        currentContainerIndex = (currentContainerIndex - 1 + containerIds.length) % containerIds.length;
+    }
+    showCurrentContainer();
+}
+
+
+document.addEventListener('keydown', handleArrowKey);
+
+const arrowRightIcon = document.querySelector('.arrow-icon.arrow-right');
+arrowRightIcon.addEventListener('click', () => handleClickArrow('arrow-right'));
+
+const arrowLeftIcon = document.querySelector('.arrow-icon.arrow-left');
+arrowLeftIcon.addEventListener('click', () => handleClickArrow('arrow-left'));
+
+// Initialize the visibility of the containers
+showCurrentContainer();
