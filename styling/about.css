@@ -29,8 +29,7 @@
 }
 
 .about-text h1 {
-    font-size: 20em; /* Adjust the font size using viewport width units */
-    margin: 0;
+    font-size: 24vw; /* Adjust the font size using viewport width units */
 }
 
 .letter-card {
@@ -69,21 +68,25 @@ li p {
 .image-container img {
     margin: 5px; /* Add spacing between images */
     transition: transform 0.3s; /* Add a transition for smooth scaling */
+    max-width: 45%; /* Ensure images don't exceed their parent's width */
+    height: auto; /* Maintain aspect ratio */
+    
 }
 
 .bigger-image {
-    width: 760px;
-    height: auto;
+    width: 55vw; /* Adjust width using viewport width units */
+    max-height: 100vh; /* Limit height using viewport height units */
     transition: transform 0.3s; /* Add transition for bigger image */
+}
+
+.smaller-image {
+    width: 20vw; /* Adjust width using viewport width units */
+    max-height: 60vh; /* Limit height using viewport height units */
+    transition: transform 0.3s;/* Adjust height using viewport height units */
 }
 
 .image-container:hover .bigger-image {
     transform: scale(0.95); /* Slightly scale down the bigger image on container hover */
-}
-
-.smaller-image {
-    width: auto;
-    height: 400px;
 }
 
 .image-container:hover .smaller-image {
@@ -279,16 +282,23 @@ li p {
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align content to the right */
-    margin-top: 1%; 
-    margin-bottom: 15%; 
-    margin-left: -20%;
+    margin-top: 1vh; /* Adjust using viewport height units */
+    margin-bottom: 15vh; /* Adjust using viewport height units */
+    margin-left: 5%; /* Adjust using viewport width units */
+    padding: 0;
+}
 
+.keyboard {
+    max-width: 100%; /* Ensure the image does not exceed the container's width */
+    height: auto; /* Maintain the aspect ratio */
+    width: 100vw; 
+    height: 60vh;
 }
 
 .apps-section {
     text-align: center;
-    margin-left: 7.5%;
-    margin-top: 4%;
+    margin-left: 7.5vw; /* Adjust using viewport width units */
+    margin-top: 4vh; /* Adjust using viewport height units */
 }
 
 .apps-section h1,
@@ -299,31 +309,31 @@ li p {
 .applications-container {
     display: flex;
     justify-content: space-evenly;
-    margin-right: 150px;
+    margin-right: 6vw; /* Adjust using viewport width units */
 }
 
 .applications {
-    width: 70px;
-    height: 100px;
+    width: 5vw; /* Adjust using viewport width units */
+    height: 12vh; /* Adjust using viewport height units */
     border-radius: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5%;
-
+    margin-right: 2vw;
+    margin-bottom: 0.5vh; /* Adjust using viewport height units */
     position: relative; /* Needed for tooltips */
 }
 
 .applications img {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 3.5vw; /* Adjust using viewport width units */
+    max-height: 3.5vw; /* Adjust using viewport width units */
 }
 
 .description,
 .description-two {
     display: block;
     position: absolute;
-    bottom: -20px;
+    bottom: -2vh; /* Adjust using viewport height units */
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0;
@@ -335,13 +345,12 @@ li p {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.applications:hover .description{
+.applications:hover .description {
     opacity: 1;
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateX(-50%) translateY(-1vh); /* Adjust using viewport height units */
 }
 
-.applications:hover .description-two{
+.applications:hover .description-two {
     opacity: 1;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(1vh); /* Adjust using viewport height units */
 }
-

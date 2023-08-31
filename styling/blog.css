@@ -5,7 +5,6 @@
     align-items: center;
     width: 80%;
     height: 125px; /* Adjusted height to be 25% bigger */
-    margin-left: 10%;
 }
 
 #search-input {
@@ -18,7 +17,7 @@
 }
 
 #search-input::placeholder {
-    color: #FAFAFA; /* Placeholder text color */
+    color: #FAFAFA; /* Placeholder te xt color */
 }
 
 
@@ -69,7 +68,6 @@ nav ul li a:hover {
 
 /* Featured Blog*/
 .featured-blog {
-    cursor: pointer;
     position: relative;
     padding: 20px;
     background: url('/assets/EndOfTheWorld.jpeg') no-repeat left center;
@@ -185,7 +183,6 @@ nav ul li a:hover {
 /* Blog Container */
 
 .blog-container {
-    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -278,6 +275,18 @@ nav ul li a:hover {
     100% {
         transform: translateX(10px);
     }
+}
+
+.fade-in {
+    opacity: 1;
+    display: block !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    display: none !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
 }
 
 

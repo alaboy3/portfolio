@@ -41,7 +41,6 @@
     flex: 0 0 calc(20% - 20px); /* Adjust the width for 5 videos per row */
     height: 250px; /* Adjust the height based on the aspect ratio */
     font-size: 20px;
-    cursor: pointer;
     transition: 0.45s all;
     transform-origin: center;
     position: relative;
@@ -73,19 +72,14 @@
 
 
 /* Apply hover effects */
-.carousel:hover .carousel-inner {
-    transform: translate3d(-20px, 0, 0);
-}
-
 .carousel-item:hover {
     transform: scale(1.2); /* Increase the scale factor for a bigger zoom effect */
     opacity: 1;
 }
 
 .carousel-item:hover ~ .carousel-item {
-    transform: translate3d(100px, 0, 0); /* Adjust the translation value */
+    transform: translate3d(20px, 0, 0); /* Adjust the translation value */
 }
-
 
 /* Styles for .tile */
 .tile {
@@ -95,7 +89,6 @@
     margin-left: -5%;
     height: calc(250px / (16/9));
     font-size: 20px;
-    cursor: pointer;
     transition: 450ms all;
     transform-origin: center left;
   }
@@ -192,3 +185,163 @@
 .tile:hover ~ .tile {
     transform: translate3d(240px, 0, 0);
 }
+
+/* Films Container */
+
+.film{
+    margin-top: 0px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.film h1 {
+    color: #FAFAFA;
+    text-align: left;
+
+}
+
+.film h2 {
+    color: #5e5a5a;
+    text-align: left;
+}
+
+.gallery-container {
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 4%;
+    margin-left: 10%;
+}
+
+.gallery {
+    width: 100%;
+    height: 100%; /* Occupies full height of container */
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stacks images vertically */
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image {
+    flex: 0 0 100%; /* Occupies full width of the gallery */
+    height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+
+.gallery-image img {
+    width: 100%; /* Occupies full width of the image container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 2.5%;
+}
+
+.scroll-dot-container {
+    position: absolute;
+    right: 2vw; /* Adjust using viewport units */
+    top: 20vw;
+    transform: translate(-50%, -50%); /* Center the overlay accurately */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 8%; /* Adjust using viewport units */
+    width: auto; /* Let the width adapt */
+    height: auto; /* Let the height adapt */
+    z-index: 1; /* Add z-index */
+}
+
+.scroll-dot {
+    width: 1.3vw; /* Adjust dot size using vw/vh units */
+    height: 1.3vw; /* Adjust dot size using vw/vh units */
+    background-color: transparent;
+    border: 2px solid #888;
+    border-radius: 50%;
+    margin: 0.5vw 0; /* Adjust margin for smaller dots */
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background-color: #888;
+    border: none;
+}
+  
+
+.gallery-image {
+    position: relative;
+    flex: 0 0 100%; /* Occupies full width of the gallery */
+    height: auto; /* Adjusted height to fit content */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 20vw; /* Vertically center the overlay */
+    left: 50%; /* Horizontally center the overlay */
+    transform: translate(-50%, -50%); /* Center the overlay accurately */
+    width: 80%; /* Adjust the width as needed */
+    padding: 10px;
+    font-size: 1.5vw; /* Adjust font size using viewport units */
+    padding: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    border-radius: 2%;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    z-index: 1; /* Add z-index */
+}
+
+.gallery-image h1 {
+    font-size: 3vw; /* Adjust the value as needed */
+    margin: 0;
+}
+
+.gallery-image h3 {
+    font-size: 1.3vw; /* Adjust the value as needed */
+    margin: 2vw 0; /* Adjust the value as needed */
+    margin-right: 4vw; 
+    color: #FAFAFA;
+}
+
+/* Adjust padding for the watch button using vw units */
+.watch-button {
+    background-color: #535d56;
+    color: #FFF;
+    font-size: 1.3vw; /* Adjust the value as needed */
+    border: 2px solid #fafafa;
+    padding: 2vw 4vw; /* Adjust the values as needed */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.watch-button:hover {
+    background-color: #555;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #d3e3cc;
+    color: #394240;
+    font-size: 1vw;
+    padding: 0.6vw 1.2vw;
+    border-radius: 20px;
+    margin-right: 1%;
+    margin-top: 1%;
+    transition: background-color 0.3s, transfexorm 0.3s;
+}
+
+.tag:hover {
+    background-color: #9bb2a2;
+    color: #FAFAFA;
+    transform: scale(1.05);
+}
+

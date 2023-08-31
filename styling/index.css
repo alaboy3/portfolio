@@ -1,3 +1,4 @@
+
 body {
     margin: 7;
     padding: 0;
@@ -8,8 +9,12 @@ body {
     cursor: none; /* Hide the default cursor */
 }
 
+*:not(.circular-cursor) {
+    cursor: none;
+  }
+
 .circular-cursor {
-    position: fixed;
+    position: absolute;
     width: 20px;
     height: 20px;
     background-color: #ce8458;
@@ -19,9 +24,10 @@ body {
     z-index: 9999;
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Soft glow effect */
     overflow: hidden; /* Clip the dots within the circle */
-  }
+    transition: width 0.2s ease, height 0.2s ease; /* Add transition to width and height */
+}
   
-  .circular-cursor::before {
+.circular-cursor::before {
     content: "";
     display: block;
     width: 100%;
@@ -29,22 +35,9 @@ body {
     background-image: radial-gradient(rgb(216, 97, 5) 0.5px, transparent 0.5px), radial-gradient(white 0.5px, transparent 0.5px);
     background-size: 4px 2px;
     background-position: 0 0, 2.5px 2.5px;
-  }
+    transition: background-size 0.2s ease; /* Add transition to background-size */
+}
 
-.fadeInElements{
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-    
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
-}
 /* Light mode styles */
 body.dark-mode {
     background-color: #78867C;
@@ -54,10 +47,10 @@ body.dark-mode {
 
 .container {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
     color: #FAFAFA;
     height: 100vh;
+    align-items: center; 
+    justify-content: space-between;
 }
 
 .container > div {
@@ -72,17 +65,19 @@ body.dark-mode {
 h1, .index-h1, h2 {
     margin: 0;
 }
-h1{ 
+
+h1 { 
     color: #FAFAFA;
+    font-size: 4vw; /* Adjust font size using viewport width units */
+}
+
+h2 { 
+    color: #535d56;
+    font-size: 2vw; /* Adjust font size using viewport width units */
 }
 
 p, h3{ 
     color: #291711;
-}
-
-h2 {
-    margin: 0;
-    color:#535d56;
 }
 
 li{
@@ -169,7 +164,6 @@ li{
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
-    cursor: pointer;
 }
 
 /* Common styles for footer content */
@@ -249,7 +243,6 @@ textarea {
 }
 
 .submit-button {
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -263,10 +256,10 @@ textarea {
     font-size: 40px;
 }
 
+/* Tiny panda */
 .icon {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     padding: 0;
     display: flex;
     margin-right: 1%;
@@ -300,4 +293,19 @@ textarea {
     100% {
         transform: translateX(0%) rotate(360deg);
     }
+}
+
+.fadeInElements{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+    
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
