@@ -64,16 +64,27 @@ body.dark-mode {
 
 h1, .index-h1, h2 {
     margin: 0;
+    font-family: 'Container', sans-serif;
 }
 
-h1 { 
+.mainTitle { 
     color: #FAFAFA;
     font-size: 4vw; /* Adjust font size using viewport width units */
 }
 
-h2 { 
+.subTitle { 
     color: #535d56;
     font-size: 2vw; /* Adjust font size using viewport width units */
+}
+
+h1 { 
+    color: #FAFAFA;
+    font-size: 2vw; /* Adjust font size using viewport width units */
+}
+
+h2 { 
+    color: #535d56;
+    font-size: 1.5vw; /* Adjust font size using viewport width units */
 }
 
 p, h3{ 
