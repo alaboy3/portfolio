@@ -1,5 +1,5 @@
 // Load the header
-fetch('/header.html')
+fetch('./header.html')
     .then(response => response.text())
     .then(data => {
         const headerPlaceholder = document.getElementById('header-placeholder');
@@ -7,7 +7,7 @@ fetch('/header.html')
     });
 
 // Load the footer
-fetch('/footer.html')
+fetch('./footer.html')
 .then(response => response.text())
 .then(data => {
     const footerPlaceholder = document.getElementById('footer-placeholder');
