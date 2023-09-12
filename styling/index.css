@@ -84,7 +84,7 @@ h1 {
 
 h2 { 
     color: #535d56;
-    font-size: 1.5vw; /* Adjust font size using viewport width units */
+    font-size: 1.2vw; /* Adjust font size using viewport width units */
 }
 
 p, h3{ 

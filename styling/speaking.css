@@ -5,23 +5,32 @@
     margin-bottom: 7%;
 }
 
-.conference-row {
+.conference-links {
     display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
-    margin-top: 20px;
-    margin-left: 10%;
-    width: 80vw;
-    height: 100%; /* Ensure the element occupies full height of parent */
+    flex-wrap: wrap;
+
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center; /* Center the items horizontally */
 }
 
+.conference-links a {
+    display: flex;
+    max-width: calc(20% - 8vw); /* Adjusted for equal spacing */
+    align-items: center;
+    text-align: center;
+    max-height: 50vh; /* Reduce the maximum height of the images */
+    margin: 10px; /* Add margin to create space around each link */
+}
+
+
 .conference {
-    margin: 0 10px;
-    max-width: 15%; /* Set the maximum width for the images */
-    max-height: 100px; /* Set the maximum height for the images */
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
 }
+
 .conference:hover {
     filter: invert(100%);
 }
@@ -234,11 +243,11 @@
     transform: translate(-50%, -50%);
     font-size: 30px;
     color: white;
-    border-radius: 100%;
+    border-radius: 110%;
     border: 3px solid #ecf0f1;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 18px; /* Adjust the size of the circular border */
+    padding: 20px; /* Adjust the size of the circular border */
     display: flex;
     justify-content: center;
     align-items: center;

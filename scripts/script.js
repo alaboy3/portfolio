@@ -20,21 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Function to set up navbar highlighting
-const navLinks = document.querySelectorAll('.nav-link');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-        // Remove 'active' class from all links
-        navLinks.forEach(navLink => {
-            navLink.classList.remove('active');
-        });
-
-        // Add 'active' class to the clicked link
-        link.classList.add('active');
-    });
-});
-
 // Circular button
 const cursor = document.querySelector('.circular-cursor');
 const interactiveElements = document.querySelectorAll('a[href], a[id], [role="button"], iconify-icon, .iconify');
@@ -67,3 +52,4 @@ interactiveElements.forEach((element) => {
     }
   });
 });
+
