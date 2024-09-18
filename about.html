@@ -17,6 +17,34 @@
         font-family: 'Container';
         src: url('fonts/Matter-Regular.otf') format('truetype');
     }
+    .download-buttons-container {
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        gap: 200px; /* Space between buttons */
+        margin: 15px 0; /* Margin around the container (adjust as needed) */
+    }
+    .download-btn {
+        text-decoration: none;
+        color: #394240;
+        display: inline-block;
+        padding: 20px 90px; /* Add padding for vertical alignment */
+        text-align: center;
+        font-size: 25px;
+        border: 2px solid transparent; /* Start with no border color */
+        background-color: #d3e3cc;
+        border-radius: 50px; /* Rounder borders */
+        transition: background-color 0.3s, transform 0.3s;
+        white-space: nowrap; /* Prevent text from wrapping */
+        cursor: pointer; /* Show pointer cursor on hover */
+    }
+
+    .download-btn:hover,
+    .download-btn:focus {
+        background-color: #9bb2a2;
+        color: #FAFAFA;
+        transform: scale(1.05);
+    }
+
 </style>
 <body class="dark-mode">
     <div class="circular-cursor"></div>
@@ -28,6 +56,10 @@
                 <h1>ANGELIK</h1>
             </div>
             <img src="assets/About Me.png" alt="About Image" class="about-image">
+        </div>
+        <div class="download-buttons-container">
+            <button class="download-btn" onclick="downloadPDF()">Resume</button>
+            <button class="download-btn" onclick="workSample()">Work Sample</button>
         </div>
 
         <div class="letter-card">
@@ -244,6 +276,34 @@
                         <div class="description-two">Animation & Mocap</div>
                     </div>
                 </div>
+
+                <div class="applications-container" style="display: flex; align-items: center;">
+                    <div class="applications">
+                        <img src="assets/Generative AI.png" alt="AI">
+                        <div class="description">Generative AI</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Solutions Engineer.png" alt="SE">
+                        <div class="description">Solutions Engineering</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Documentation.png" alt="Docs">
+                        <div class="description">Technical Writing</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Pre-Sale.png" alt="PreSales">
+                        <div class="description">Pre-Sales Technical Calls</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Customer Service.png" alt="CustomerService">
+                        <div class="description">Support Engineering</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Community Manager.png" alt="Community">
+                        <div class="description">Community Manager</div>
+                    </div>
+                </div>
+
                 <br>
                 <h2>Softwares</h2>
                 <div class="applications-container" style="display: flex; align-items: center;">
@@ -306,8 +366,41 @@
                         <div class="description-two">Project Management</div>
                     </div>
                 </div>
+                <div class="applications-container" style="display: flex; align-items: center; justify-content: flex-start;">
+                    <div class="applications">
+                        <img src="assets/miro-svgrepo-com.svg" alt="Miro">
+                        <div class="description">Miro</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Obs.png" alt="OBS">
+                        <div class="description">OBS</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/logo_12868746.png" alt="GitHub">
+                        <div class="description">GitHub</div>
+                    </div>
+                    <div class="applications">
+                        <img src="assets/Discord.png" alt="Discord">
+                        <div class="description">Discord</div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script>
+            function downloadPDF() {
+                const link = document.createElement('a');
+                link.href = 'assets/Resume/Angelik_Laboy (2024).pdf';  // Replace with your PDF file path
+                link.download = 'Angelik_Laboy - Resume.pdf';  // Optional: specify the download filename
+                link.click();
+            }
+            function workSample() {
+                const link = document.createElement('a');
+                link.href = 'assets/Resume/Work Examples-ALT.pdf';  // Replace with your PDF file path
+                link.download = 'Angelik_Laboy - Work Samples.pdf';  // Optional: specify the download filename
+                link.click();
+            }
+        </script>
+
     </div>
     
     <div id="footer-placeholder"></div>
